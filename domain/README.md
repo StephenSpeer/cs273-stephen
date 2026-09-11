@@ -10,13 +10,7 @@ The purpose of this database is to organize troubleshooting solutions for the Ha
 - Inform user on networking related problems.
 - Guide use of the Command Line Interface
 
-## Tech Stack
-MySQL · PHP · draw.io · Git · GitHub
-
-## Project Phases
-See individual folders for each phase.
-
-## Description
+### Description
 
 This database is for the Hannibal Missouri teams of the Air Force Association's CyberPatriot Cybersecurity competition. 
 The information stored within is meant to be used as instructions through security problems of varying levels of difficulty.
