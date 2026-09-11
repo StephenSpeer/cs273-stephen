@@ -1,7 +1,7 @@
 # Phase 2 — Field List
 ## Draft Fields
-| Field | Purpose|
-|---|---|
+| Field | Purpose | Notes |
+|---|---|---|
 | Instruction ID | Unique identifier, e.g. WIN-ACCT-001 |
 | Title | Short name, e.g. “Disable Guest Account” |
 | Operating System | Windows 10, Windows 11, Ubuntu, etc. |
