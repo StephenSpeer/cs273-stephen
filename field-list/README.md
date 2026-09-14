@@ -20,7 +20,6 @@
 | Verification Method | How to confirm the change worked |
 | Before State | What an insecure configuration looks like |
 | After State | What a secure configuration looks like |
-| Scoring Impact | Expected CyberPatriot scoring relevance, if known |
 | Dependencies | Things that must be done first |
 | Potential Side Effects | What legitimate functionality could be affected |
 | Do Not Change | Settings that should be left alone |
@@ -33,4 +32,7 @@
 | Tags | Searchable keywords |
 | Notes | Additional team-specific information |
 
-
+## Calculated Fields
+|---|---|---|
+| Scoring Impact | Expected CyberPatriot scoring relevance, if known |
+| Points Scored | Total number of points |
