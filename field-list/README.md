@@ -33,6 +33,7 @@
 | Notes | Additional team-specific information |
 
 ## Calculated Fields
-|---|---|---|
+| Fields | Formula |
+|---|---|
 | Scoring Impact | Expected CyberPatriot scoring relevance, if known |
 | Points Scored | Total number of points |
