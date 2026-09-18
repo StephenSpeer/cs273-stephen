@@ -104,3 +104,6 @@ For competition efficiency; regarding who should be assigned what tasks.
 |---|---|---|
 | Difficulty ID |
 | Name |
+
+## Reflection 
+Many of the fields were untrackable in some manner so I had to change them. It also did not make sense to have Instruction ID be the primary key when it is supposed to be an end value. Therefore, it has been replace with issue id which connects each of the detail based tables much more coherently.
