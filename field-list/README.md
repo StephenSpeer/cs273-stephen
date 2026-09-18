@@ -2,7 +2,7 @@
 ## Draft Fields
 | Field | Purpose | Notes |
 |---|---|---|
-| Instruction ID | Unique identifier, e.g. WIN-ACCT-001 |
+| Instruction ID | Unique identifier, e.g. WIN-ACCT-001 | Replaced with Issue ID | 
 | Title | Short name, e.g. “Disable Guest Account” |
 | Operating System | Windows 10, Windows 11, Ubuntu, etc. |
 | OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. |
@@ -18,8 +18,8 @@
 | Command(s) | Exact commands that can be used |
 | Expected State | What the system should look like after remediation |
 | Verification Method | How to confirm the change worked |
-| Before State | What an insecure configuration looks like |
-| After State | What a secure configuration looks like |
+| Before State | What an insecure configuration looks like |not relevant |
+| After State | What a secure configuration looks like |ditto |
 | Dependencies | Things that must be done first |
 | Potential Side Effects | What legitimate functionality could be affected |
 | Do Not Change | Settings that should be left alone |
@@ -37,3 +37,70 @@
 |---|---|
 | Scoring Impact | Expected CyberPatriot scoring relevance, if known |
 | Points Scored | Total number of points |
+
+## Table List
+### Issues
+the list of problems
+| Field | Purpose | Notes |
+|---|---|---|
+| Issue ID | The problem structure |
+| Operating system ID | Windows 10, Windows 11, Ubuntu, etc. |
+| Category ID | Accounts, Services, Firewall, Updates, Policies, etc. |
+| Priority ID | Critical / High / Medium / Low |
+| Difficulty ID | Beginner / Intermediate / Advanced |
+| GUI Procedure | Steps using the graphical interface |
+| Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable |
+| Potential Side Effects | What legitimate functionality could be affected |
+
+### Issue-tag
+to combine issue ID with tag IDs.
+| Field | Purpose | Notes |
+|---|---|---|
+| Issue ID |
+| Tag ID |
+
+### Operating Systems
+For specifications on solutions.
+| Field | Purpose | Notes |
+|---|---|---|
+| Operating system ID | Windows 10, Windows 11, Ubuntu, etc. |
+| Name | 
+| Brand | Win, Linux, etc. |
+| OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. |
+
+### Tags
+For labeling issues
+| Field | Purpose | Notes |
+|---|---|---|
+| Tags | Searchable keywords |
+| Title | Short name, e.g. “Disable Guest Account” |
+
+### Categories 
+For organizing solution fields
+| Field | Purpose | Notes |
+|---|---|---|
+| Category ID | Accounts, Services, Firewall, Updates, Policies, etc. |
+| Name |
+
+### Resource
+for knowing what to use in alternative scenarios
+| Field | Purpose | Notes |
+|---|---|---|
+| Resource ID | 
+| Name | 
+| url | https://etc. |
+| Description |
+
+### Priority
+For competition efficiency
+| Field | Purpose | Notes |
+|---|---|---|
+| Priority ID |
+| Name |
+
+### Difficulty
+For competition efficiency; regarding who should be assigned what tasks.
+| Field | Purpose | Notes |
+|---|---|---|
+| Difficulty ID |
+| Name |
