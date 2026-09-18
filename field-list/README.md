@@ -44,10 +44,10 @@ the list of problems
 | Field | Purpose | Notes |
 |---|---|---|
 | Issue ID(PK) | The problem structure |
-| Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. |
-| Category ID | Accounts, Services, Firewall, Updates, Policies, etc. |
-| Priority ID | Critical / High / Medium / Low |
-| Difficulty ID | Beginner / Intermediate / Advanced |
+| Operating system ID(FK) | Windows 10, Windows 11, Ubuntu, etc. |
+| Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. |
+| Priority ID(FK) | Critical / High / Medium / Low |
+| Difficulty ID(FK) | Beginner / Intermediate / Advanced |
 | GUI Procedure | Steps using the graphical interface |
 | Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable |
 | Potential Side Effects | What legitimate functionality could be affected |
@@ -56,8 +56,8 @@ the list of problems
 to combine issue ID with tag IDs.
 | Field | Purpose | Notes |
 |---|---|---|
-| Issue ID |
-| Tag ID |
+| Issue ID(FK) |
+| Tag ID(FK) |
 
 ### Operating Systems
 For specifications on solutions.
@@ -80,14 +80,14 @@ For labeling issues
 For organizing solution fields
 | Field | Purpose | Notes |
 |---|---|---|
-| Category ID | Accounts, Services, Firewall, Updates, Policies, etc. |
+| Category ID(PK) | Accounts, Services, Firewall, Updates, Policies, etc. |
 | Name |
 
 ### Resource
 for knowing what to use in alternative scenarios
 | Field | Purpose | Notes |
 |---|---|---|
-| Resource ID | 
+| Resource ID(PK) | 
 | Name | 
 | url | https://etc. |
 | Description |
@@ -96,14 +96,14 @@ for knowing what to use in alternative scenarios
 For competition efficiency
 | Field | Purpose | Notes |
 |---|---|---|
-| Priority ID |
+| Priority ID(PK) |
 | Name |
 
 ### Difficulty
 For competition efficiency; regarding who should be assigned what tasks.
 | Field | Purpose | Notes |
 |---|---|---|
-| Difficulty ID |
+| Difficulty ID(PK) |
 | Name |
 
 ## Reflection 
