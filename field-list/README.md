@@ -43,8 +43,8 @@
 the list of problems
 | Field | Purpose | Notes |
 |---|---|---|
-| Issue ID | The problem structure |
-| Operating system ID | Windows 10, Windows 11, Ubuntu, etc. |
+| Issue ID(PK) | The problem structure |
+| Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. |
 | Category ID | Accounts, Services, Firewall, Updates, Policies, etc. |
 | Priority ID | Critical / High / Medium / Low |
 | Difficulty ID | Beginner / Intermediate / Advanced |
@@ -63,7 +63,7 @@ to combine issue ID with tag IDs.
 For specifications on solutions.
 | Field | Purpose | Notes |
 |---|---|---|
-| Operating system ID | Windows 10, Windows 11, Ubuntu, etc. |
+| Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. |
 | Name | 
 | Brand | Win, Linux, etc. |
 | OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. |
@@ -72,6 +72,7 @@ For specifications on solutions.
 For labeling issues
 | Field | Purpose | Notes |
 |---|---|---|
+| Tag ID(PK) |
 | Tags | Searchable keywords |
 | Title | Short name, e.g. “Disable Guest Account” |
 
