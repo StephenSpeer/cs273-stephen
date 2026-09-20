@@ -4,8 +4,8 @@
 |---|---|---|
 | Instruction ID | Unique identifier, e.g. WIN-ACCT-001 | Replaced with Issue ID | 
 | Title | Short name, e.g. “Disable Guest Account” |
-| Operating System | Windows 10, Windows 11, Ubuntu, etc. |
-| OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. |
+| Operating System | Windows 10, Windows 11, Ubuntu, etc. | Multivalued, brought into its own table |
+| OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. | Multipart Spilt into brand and version. |
 | Competition Category | Accounts, Services, Firewall, Updates, Policies, etc. |
 | Security Objective | What security problem the instruction addresses |
 | Threat / Vulnerability | What could go wrong if it's left unsecured |
@@ -32,11 +32,13 @@
 | Tags | Searchable keywords |
 | Notes | Additional team-specific information |
 
+Without guidance, I would have created one giant table instead of attaching several foreign keys.
+
 ## Calculated Fields
 | Fields | Formula |
 |---|---|
-| Scoring Impact | Expected CyberPatriot scoring relevance, if known |
-| Points Scored | Total number of points |
+| Operating system name | = brand + version |
+| Fix Value | Priority + Difficulty |
 
 ## Table List
 ### Issues
@@ -64,7 +66,6 @@ For specifications on solutions.
 | Field | Purpose | Notes |
 |---|---|---|
 | Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. |
-| Name | 
 | Brand | Win, Linux, etc. |
 | OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. |
 
