@@ -66,7 +66,7 @@ For specifications on solutions.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
 | Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. | Not Null |
-| Brand | Win, Linux, etc. | | Not Null |
+| Brand | Win, Linux, etc. | Not Null |
 | OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. | Null |
 
 ### Tags
