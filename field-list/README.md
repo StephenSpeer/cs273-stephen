@@ -43,8 +43,8 @@ Without guidance, I would have created one giant table instead of attaching seve
 ## Table List
 ### Issues
 the list of problems
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Issue ID(PK) | The problem structure |
 | Operating system ID(FK) | Windows 10, Windows 11, Ubuntu, etc. |
 | Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. |
@@ -56,38 +56,38 @@ the list of problems
 
 ### Issue-tag
 to combine issue ID with tag IDs.
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Issue ID(FK) |
 | Tag ID(FK) |
 
 ### Operating Systems
 For specifications on solutions.
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. |
 | Brand | Win, Linux, etc. |
 | OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. |
 
 ### Tags
 For labeling issues
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Tag ID(PK) |
 | Tags | Searchable keywords |
 | Title | Short name, e.g. “Disable Guest Account” |
 
 ### Categories 
 For organizing solution fields
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Category ID(PK) | Accounts, Services, Firewall, Updates, Policies, etc. |
 | Name |
 
 ### Resource
 for knowing what to use in alternative scenarios
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Resource ID(PK) | 
 | Name | 
 | url | https://etc. |
@@ -95,15 +95,15 @@ for knowing what to use in alternative scenarios
 
 ### Priority
 For competition efficiency
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Priority ID(PK) |
 | Name |
 
 ### Difficulty
 For competition efficiency; regarding who should be assigned what tasks.
-| Field | Purpose | Notes |
-|---|---|---|
+| Field | Purpose | Null/Not | Type | Notes |
+|---|---|---|---|---|
 | Difficulty ID(PK) |
 | Name |
 
