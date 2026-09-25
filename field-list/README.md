@@ -50,8 +50,8 @@ the list of problems
 | Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. | Null |
 | Priority ID(FK) | Critical / High / Medium / Low | Null |
 | Difficulty ID(FK) | Beginner / Intermediate / Advanced | Null |
-| GUI Procedure | Steps using the graphical interface | Null |
-| Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable | Null |
+| GUI Procedure | Steps using the graphical interface | Not Null |
+| Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable | Not Null |
 | Potential Side Effects | What legitimate functionality could be affected | Null |
 
 ### Issue-tag
