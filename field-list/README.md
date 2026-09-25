@@ -45,67 +45,67 @@ Without guidance, I would have created one giant table instead of attaching seve
 the list of problems
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Issue ID(PK) | The problem structure | Not Null |
-| Operating system ID(FK) | Windows 10, Windows 11, Ubuntu, etc. | Null |
-| Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. | Null |
-| Priority ID(FK) | Critical / High / Medium / Low | Null |
-| Difficulty ID(FK) | Beginner / Intermediate / Advanced | Null |
-| GUI Procedure | Steps using the graphical interface | Not Null |
-| Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable | Not Null |
-| Potential Side Effects | What legitimate functionality could be affected | Null |
+| Issue ID(PK) | The problem structure | Not Null | INT |
+| Operating system ID(FK) | Windows 10, Windows 11, Ubuntu, etc. | Null | INT |
+| Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. | Null | INT |
+| Priority ID(FK) | Critical / High / Medium / Low | Null | INT |
+| Difficulty ID(FK) | Beginner / Intermediate / Advanced | Null | INT |
+| GUI Procedure | Steps using the graphical interface | Not Null | varchar |
+| Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable | Not Null | varchar |
+| Potential Side Effects | What legitimate functionality could be affected | Null | varchar |
 
 ### Issue-tag
 to combine issue ID with tag IDs.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Issue ID(FK) | | Null |
-| Tag ID(FK) | | Null |
+| Issue ID(FK) | | Null | INT | varchar |
+| Tag ID(FK) | | Null | INT | varchar |
 
 ### Operating Systems
 For specifications on solutions.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. | Not Null |
-| Brand | Win, Linux, etc. | Not Null |
-| OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. | Null |
+| Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. | Not Null | INT |
+| Brand | Win, Linux, etc. | Not Null | varchar |
+| OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. | Null | varchar |
 
 ### Tags
 For labeling issues
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Tag ID(PK) | | Not Null |
-| Tags | Searchable keywords | Not Null |
-| Title | Short name, e.g. “Disable Guest Account” | Not Null |
+| Tag ID(PK) | | Not Null | INT |
+| Tags | Searchable keywords | Not Null | varchar |
+| Title | Short name, e.g. “Disable Guest Account” | Not Null | varchar |
 
 ### Categories 
 For organizing solution fields
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Category ID(PK) | Accounts, Services, Firewall, Updates, Policies, etc. | Not Null |
-| Name | | Not Null |
+| Category ID(PK) | Accounts, Services, Firewall, Updates, Policies, etc. | Not Null | INT |
+| Name | | Not Null | varchar |
 
 ### Resource
 for knowing what to use in alternative scenarios
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Resource ID(PK) | | Not Null | 
-| Name | | Null |
-| url | https://etc. | Null |
-| Description | | Null |
+| Resource ID(PK) | | Not Null | INT |
+| Name | | Null | varchar |
+| url | https://etc. | Null | varchar |
+| Description | | Null | varchar |
 
 ### Priority
 For competition efficiency
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Priority ID(PK) | | Not Null |
-| Name | | Null |
+| Priority ID(PK) | | Not Null | INT |
+| Name | | Null | varchar |
 
 ### Difficulty
 For competition efficiency; regarding who should be assigned what tasks.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Difficulty ID(PK) | | Not Null |
-| Name | | Null |
+| Difficulty ID(PK) | | Not Null | INT |
+| Name | | Null | varchar |
 
 ## Reflection 
 Many of the fields were untrackable in some manner so I had to change them. It also did not make sense to have Instruction ID be the primary key when it is supposed to be an end value. Therefore, it has been replace with issue id which connects each of the detail based tables much more coherently.
