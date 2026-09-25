@@ -45,67 +45,67 @@ Without guidance, I would have created one giant table instead of attaching seve
 the list of problems
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Issue ID(PK) | The problem structure |
-| Operating system ID(FK) | Windows 10, Windows 11, Ubuntu, etc. |
-| Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. |
-| Priority ID(FK) | Critical / High / Medium / Low |
-| Difficulty ID(FK) | Beginner / Intermediate / Advanced |
-| GUI Procedure | Steps using the graphical interface |
-| Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable |
-| Potential Side Effects | What legitimate functionality could be affected |
+| Issue ID(PK) | The problem structure | Not Null |
+| Operating system ID(FK) | Windows 10, Windows 11, Ubuntu, etc. | Null |
+| Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. | Null |
+| Priority ID(FK) | Critical / High / Medium / Low | Null |
+| Difficulty ID(FK) | Beginner / Intermediate / Advanced | Null |
+| GUI Procedure | Steps using the graphical interface | Null |
+| Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable | Null |
+| Potential Side Effects | What legitimate functionality could be affected | Null |
 
 ### Issue-tag
 to combine issue ID with tag IDs.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Issue ID(FK) |
-| Tag ID(FK) |
+| Issue ID(FK) | | Null |
+| Tag ID(FK) | | Null |
 
 ### Operating Systems
 For specifications on solutions.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. |
-| Brand | Win, Linux, etc. |
-| OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. |
+| Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. | Not Null |
+| Brand | Win, Linux, etc. | | Not Null |
+| OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. | Null |
 
 ### Tags
 For labeling issues
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Tag ID(PK) |
-| Tags | Searchable keywords |
-| Title | Short name, e.g. “Disable Guest Account” |
+| Tag ID(PK) | | Not Null |
+| Tags | Searchable keywords | Not Null |
+| Title | Short name, e.g. “Disable Guest Account” | Not Null |
 
 ### Categories 
 For organizing solution fields
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Category ID(PK) | Accounts, Services, Firewall, Updates, Policies, etc. |
-| Name |
+| Category ID(PK) | Accounts, Services, Firewall, Updates, Policies, etc. | Not Null |
+| Name | | Not Null |
 
 ### Resource
 for knowing what to use in alternative scenarios
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Resource ID(PK) | 
-| Name | 
-| url | https://etc. |
-| Description |
+| Resource ID(PK) | | Not Null | 
+| Name | | Null |
+| url | https://etc. | Null |
+| Description | | Null |
 
 ### Priority
 For competition efficiency
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Priority ID(PK) |
-| Name |
+| Priority ID(PK) | | Not Null |
+| Name | | Null |
 
 ### Difficulty
 For competition efficiency; regarding who should be assigned what tasks.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Difficulty ID(PK) |
-| Name |
+| Difficulty ID(PK) | | Not Null |
+| Name | | Null |
 
 ## Reflection 
 Many of the fields were untrackable in some manner so I had to change them. It also did not make sense to have Instruction ID be the primary key when it is supposed to be an end value. Therefore, it has been replace with issue id which connects each of the detail based tables much more coherently.
