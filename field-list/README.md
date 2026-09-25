@@ -48,8 +48,8 @@ the list of problems
 | Issue ID(PK) | The problem structure | Not Null | INT |
 | Operating system ID(FK) | Windows 10, Windows 11, Ubuntu, etc. | Null | INT |
 | Category ID(FK) | Accounts, Services, Firewall, Updates, Policies, etc. | Null | INT |
-| Priority ID(FK) | Critical / High / Medium / Low | Null | INT |
-| Difficulty ID(FK) | Beginner / Intermediate / Advanced | Null | INT |
+| Priority ID(FK) | Critical / High / Medium / Low | Null | INT | CHECK (Either: Critical / High / Medium / Low) |
+| Difficulty ID(FK) | Beginner / Intermediate / Advanced | Null | INT | CHECK (Either: Beginner / Intermediate / Advanced ) |
 | GUI Procedure | Steps using the graphical interface | Not Null | varchar |
 | Command-Line Procedure | PowerShell, CMD, Bash, etc., when applicable | Not Null | varchar |
 | Potential Side Effects | What legitimate functionality could be affected | Null | varchar |
@@ -66,7 +66,7 @@ For specifications on solutions.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
 | Operating system ID(PK) | Windows 10, Windows 11, Ubuntu, etc. | Not Null | INT |
-| Brand | Win, Linux, etc. | Not Null | varchar |
+| Brand | Win, Linux, etc. | Not Null | varchar | CHECK (Either: Windows, Linux, or Cisco) |
 | OS Version / Edition | Windows 10 Pro, Ubuntu 22.04, etc. | Null | varchar |
 
 ### Tags
