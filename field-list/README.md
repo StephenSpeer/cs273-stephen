@@ -75,7 +75,7 @@ For labeling issues
 |---|---|---|---|---|
 | Tag ID(PK) | | Not Null | INT |
 | Tags | Searchable keywords | Not Null | varchar |
-| Title | Short name, e.g. “Disable Guest Account” | Not Null | varchar |
+| Title (AK)| Short name, e.g. “Disable Guest Account” | Not Null | varchar |
 
 ### Categories 
 For organizing solution fields
