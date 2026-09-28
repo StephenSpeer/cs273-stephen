@@ -58,8 +58,8 @@ the list of problems
 to combine issue ID with tag IDs.
 | Field | Purpose | Null/Not | Type | Notes |
 |---|---|---|---|---|
-| Issue ID(FK) | | Null | INT | varchar |
-| Tag ID(FK) | | Null | INT | varchar |
+| Issue ID(PK/FK) | | Null | INT | varchar |
+| Tag ID(PK/FK) | | Null | INT | varchar |
 
 ### Operating Systems
 For specifications on solutions.
