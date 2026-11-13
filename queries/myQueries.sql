@@ -1,50 +1,62 @@
+-- Query 1 - Firewall fixes
 SELECT i.CLIFix, i.GUIFix, c.Category
 FROM Issues i
-LEFT JOIN Categories.c ON c.CategoryID = i.CategoryID
-WHERE c.Category = ‘Firewall’;
+LEFT JOIN Categories c ON c.CategoryID = i.CategoryID
+WHERE c.Category = 'Firewall';
 
-SELECT t.Title,  i.issueID
+-- Query 2 - Plain-English title for each issue
+SELECT t.Title, i.IssueID
 FROM Tags t
-INNER JOIN Issue-Tag it ON t.TagID = it.TagID
-INNER JOIN Issues i ON it.IssueID =i.Issue ID;
+INNER JOIN IssueTag it ON t.TagID = it.TagID
+INNER JOIN Issues i ON it.IssueID = i.IssueID;
 
-SELECT r.Resource, c.Category
+-- Query 3 - Resources for Encryption issues
+SELECT r.ResourceName, c.Category
 FROM Resources r
 INNER JOIN Issues i ON r.ResourceID = i.ResourceID
-INNER JOIN Categories c ON i.Category = c.CategoryID 
-WHERE c.Category = ‘Encryption’;
+INNER JOIN Categories c ON i.CategoryID = c.CategoryID
+WHERE c.Category = 'Encryption';
 
+-- Query 4 - Issues on Windows
 SELECT o.Version, i.IssueID
 FROM OperatingSystem o
 INNER JOIN Issues i ON o.OperatingSystemID = i.OperatingSystemID
-WHERE o.Brand = ‘Windows’;
+WHERE o.Brand = 'Windows';
 
+-- Query 5 - Issues on Linux
 SELECT o.Version, i.IssueID
 FROM OperatingSystem o
 INNER JOIN Issues i ON o.OperatingSystemID = i.OperatingSystemID
-WHERE o.Brand = ‘Linux’;
+WHERE o.Brand = 'Linux';
 
+-- Query 6 - Issue count for Firewall and Policies
 SELECT c.Category, COUNT(i.IssueID) AS ProblemCount
 FROM Categories c
-INNER JOIN Issues i ON i.CategoryID
-GROUP BY Category
-HAVING Category = ‘Firewall’ 
-OR Category = ‘Policies’;
+INNER JOIN Issues i ON i.CategoryID = c.CategoryID
+GROUP BY c.Category
+HAVING c.Category = 'Firewall'
+OR c.Category = 'Policies';
 
-SELECT IssueID, AVG(Difficulty)
-FROM Issues
-GROUP BY Category ;
+-- Query 7 - Average difficulty per category
+SELECT c.Category, AVG(i.Difficulty) AS AvgDifficulty
+FROM Issues i
+INNER JOIN Categories c ON i.CategoryID = c.CategoryID
+GROUP BY c.Category;
 
+-- Query 8 - Number of Linux fixes
 SELECT COUNT(i.CLIFix) AS FixCnt
 FROM Issues i
-INNER JOIN OperatingSystem o ON i.OperatingSystemID
-WHERE Brand = ‘Linux’;
+INNER JOIN OperatingSystem o ON i.OperatingSystemID = o.OperatingSystemID
+WHERE o.Brand = 'Linux';
 
-SELECT SELECT IssueID, AVG(Priority)
-FROM Issues
-GROUP BY Category;
+-- Query 9 - Average priority per category
+SELECT c.Category, AVG(i.Priority) AS AvgPriority
+FROM Issues i
+INNER JOIN Categories c ON i.CategoryID = c.CategoryID
+GROUP BY c.Category;
 
+-- Query 10 - Number of Windows fixes
 SELECT COUNT(i.CLIFix) AS FixCnt
 FROM Issues i
-INNER JOIN OperatingSystem o ON i.OperatingSystemID
-WHERE Brand = ‘Windows’;
+INNER JOIN OperatingSystem o ON i.OperatingSystemID = o.OperatingSystemID
+WHERE o.Brand = 'Windows';
